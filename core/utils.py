@@ -14,7 +14,7 @@ def remove_scene_objects():
     and collections"""
     # Delete world custom properties
     if bpy.context.scene.world.keys():
-        for custom_property in bpy.context.scene.world.keys():
+        for custom_property in list(bpy.context.scene.world.keys()):
             del bpy.context.scene.world[custom_property]
     # Deleting previous objects every time a new CityJSON file is imported
     bpy.ops.object.select_all(action='SELECT')
