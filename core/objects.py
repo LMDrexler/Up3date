@@ -165,7 +165,7 @@ class CityJSONParser:
             new_objects.append(cityobject)
             cityobjs[objid] = cityobject
 
-            for i, geom in enumerate(obj['geometry']):
+            for i, geom in enumerate(obj.get('geometry', [])):
                 geom_obj = self.parse_geometry(objid, obj, geom, i)
                 geom_obj.parent = cityobject
                 new_objects.append(geom_obj)
